@@ -3,8 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:local="clr-namespace:TriviaXamarinApp.ViewModels"
+             x:DataType="local:HomeViewModels"
              mc:Ignorable="d"
              x:Class="TriviaXamarinApp.Views.Home">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" IconImageSource="play.png" Command="{Binding NavigateToPage}" CommandParameter="play">           
+        </ToolbarItem>
+
+        <ToolbarItem Order="Secondary" Text="Sign Up" Priority="0" Command="{Binding NavigateToPage}" CommandParameter="signUp"></ToolbarItem>
+        <ToolbarItem Order="Secondary" Text="Log In" Priority="1" Command="{Binding NavigateToPage}" CommandParameter="signIn"></ToolbarItem>
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Welcome to Xamarin.Forms!"
