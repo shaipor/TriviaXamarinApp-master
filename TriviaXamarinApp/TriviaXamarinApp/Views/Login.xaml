@@ -3,6 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+            xmlns:local="clr-namespace:TriviaXamarinApp.ViewModels"
+             x:DataType="local:LoginViewModels"
              mc:Ignorable="d"
              x:Class="TriviaXamarinApp.Views.Login">
     <ContentPage.Content>
@@ -10,6 +12,14 @@
             <Label Text="Welcome to Login page!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
+            <Label Text="User Name"/>
+            <Entry Text="{Binding UserName}"/>
+            <Label Text="Password:"/>
+            <Entry Text="{Binding Password}"/>
+
+            <!--קומנד במקום איוונט-->
+            <Button Text="Log In" x:Name="LogInBtn"  Command="{Binding LoginCommand}" VerticalOptions="EndAndExpand" />
+         
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
