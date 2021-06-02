@@ -32,7 +32,7 @@ namespace TriviaXamarinApp.ViewModels
         private async void SignUp()
         {
             bool isRegister = false;
-            User u = new User { Email= email, Password=password};
+            User u = new User { Email= Email, Password=Password};
             
             //קריאה לפעולת לוגין מסרוויס
             isRegister = await proxy.RegisterUser(u);
