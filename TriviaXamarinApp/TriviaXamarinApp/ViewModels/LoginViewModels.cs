@@ -11,13 +11,13 @@ namespace TriviaXamarinApp.ViewModels
     class LoginViewModels:ModelViewBase
     {
         //הגדרת משתנים
-        private string userName;
+        private string email;
         private string password;
-        //אובביקט פרוקסי בו יש את הפעולות מתקיית סרוויס
+        //אוביקט פרוקסי בו יש את הפעולות מתקיית סרוויס
         private TriviaWebAPIProxy proxy;
 
         //properties
-        public string UserName { get=>userName; set { if (userName != value) { userName = value; OnPropertyChanged("UserName"); } } }
+        public string Email { get=> email; set { if (email != value) { email = value; OnPropertyChanged("Email"); } } }
         public string Password { get => password; set { if (password != value) { password = value; OnPropertyChanged("Password"); } } }
         public ICommand LoginCommand { get; }
 
@@ -31,11 +31,11 @@ namespace TriviaXamarinApp.ViewModels
         {
             User user = null;
             //קריאה לפעולת לוגין מסרוויס
-            user = await proxy.LoginAsync(UserName, Password);
+            user = await proxy.LoginAsync(email, Password);
             if (user == null)
             {
                 //הודעת שגיאה
-                await Application.Current.MainPage.DisplayAlert("login failed", "user name or password invalid", "OK");
+                await Application.Current.MainPage.DisplayAlert("Login failed", "User name or password invalid", "OK");
             }
             else
             {

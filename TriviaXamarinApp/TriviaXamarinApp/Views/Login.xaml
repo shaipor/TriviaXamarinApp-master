@@ -12,8 +12,8 @@
             <Label Text="Welcome to Login page!"
                 VerticalOptions="CenterAndExpand" 
                 HorizontalOptions="CenterAndExpand" />
-            <Label Text="User Name"/>
-            <Entry Text="{Binding UserName}"/>
+            <Label Text="Email"/>
+            <Entry Text="{Binding Email}"/>
             <Label Text="Password:"/>
             <Entry Text="{Binding Password}"/>
 
